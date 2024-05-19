@@ -24,24 +24,18 @@ pipeline {
         stage('Terraform Plan') {
            steps {
                 script {
-                    sh 'terraform plan'
+                    sh 'terraform plan -out=tfplan'
                 }
            }
         }
         stage('Terraform Apply') {
            steps {
                 script {
-                    sh 'terraform apply -auto-approve'
+                    sh 'terraform apply -auto-approve tfplan'
                 }
            }
         }
-        stage('Terraform destroy') {
-           steps {
-                script {
-                    sh 'terraform destroy -auto-approve'
-                }
-           }
-        }
+        
     }
 }
   
