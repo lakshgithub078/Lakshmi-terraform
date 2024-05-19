@@ -3,11 +3,11 @@ provider "aws" {
 }
 
 resource "aws_instance" "terrform-instance-1" {
-  ami = "ami-013e83f579886baeb"
+  ami = "ami-0cc9838aa7ab1dce7"
   instance_type = "t2.micro"
   key_name = "jenkins"
   tags = {
-    Name  = "my-ec2-instance-1"
+    Name  = "ec2-instance-1"
     appid = "345"
     env   = "dev"
   }
